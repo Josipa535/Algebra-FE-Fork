@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { groceriesStore } from "../store/groceries-store";
 
 function GroceryAdd() {
   const [grocery, setGrocery] = useState("");
@@ -9,6 +10,7 @@ function GroceryAdd() {
 
   function groceryAddHandler() {
     // Spremi lokalno stanje u globalno stanje
+    groceriesStore.addGrocery(grocery);
     setGrocery("");
   }
 
