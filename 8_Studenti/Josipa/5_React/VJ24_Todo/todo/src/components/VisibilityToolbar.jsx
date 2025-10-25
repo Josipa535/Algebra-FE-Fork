@@ -12,6 +12,7 @@ function VisibilityToolbar({ visibilityType, onVisibilityChange }) {
   function handle(value) {
     onVisibilityChange(value);
   }
+
   return (
     <ButtonGroup>
       <Button

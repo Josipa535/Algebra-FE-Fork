@@ -16,7 +16,7 @@ function Parent() {
   const [message, setMessage] = useState("Hello World!");
 
   function btnClickHandler(newMessage) {
-    //setMessage("Bok");
+    //setMessage("Bok!");
     setMessage(newMessage);
   }
 
@@ -36,9 +36,9 @@ function App() {
     setState((prevState) => prevState + 1);
     setState((prevState) => prevState + 1);
     setState((prevState) => prevState + 1);
-    // setState(state + 1);
-    // setState(state + 1);
-    // setState(state + 1);
+    //setState(state + 1);
+    //setState(state + 1);
+    //setState(state + 1);
   }
 
   return (

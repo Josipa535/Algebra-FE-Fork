@@ -18,12 +18,25 @@ class AddTodoForm extends React.Component {
     this.setState({ newItem: event.target.value });
   }
 
-  handleAddTodoClick(event) {
+  handleAddTodoClick = (event) => {
     event.preventDefault();
-  }
+
+    const { addTodo } = this.props;
+    const { newItem } = this.state;
+
+    if (!newItem || !newItem.trim()) {
+      alert("Upiši todo!");
+      return;
+    }
+
+    addTodo(newItem);
+
+    this.setState({ newItem: "" });
+  };
 
   render() {
     const { newItem } = this.state;
+
     return (
       <InputGroup>
         <FormControl
@@ -31,7 +44,11 @@ class AddTodoForm extends React.Component {
           value={newItem}
           onChange={this.handleChange}
         ></FormControl>
-        <Button type="submit" variant="primary">
+        <Button
+          type="submit"
+          variant="primary"
+          onClick={this.handleAddTodoClick}
+        >
           Add
         </Button>
       </InputGroup>
